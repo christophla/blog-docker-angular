@@ -1,0 +1,25 @@
+version: '3'
+services:
+
+  docker-angular-app:
+    image: docker-angular-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker-angular-app
+    environment:
+      - ENABLE_POLLING=${ENABLE_POLLING}
+      - VIRTUAL_HOST=web.mydomain.com
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./src:/home/app/angular-app/src
+    working_dir: /home/app/angular-app
+    networks:
+      - dev-network
+    tty: true
+    stdin_open: true
+
+networks:
+  dev-network:
+    driver: bridge

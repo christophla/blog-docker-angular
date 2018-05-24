@@ -1,0 +1,36 @@
+{
+    "configurations": [
+        {
+            "name": "Local Launch",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Docker Launch",
+            "request": "launch",
+            "preLaunchTask": "compose",
+            "type": "chrome",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Unit Tests",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:9876/debug.html",
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "name": "E2E Tests",
+            "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+            "protocol": "inspector",
+            "request": "launch",
+            "type": "node",
+            "args": [
+                "${workspaceRoot}/protractor.conf.js"
+            ],
+        }
+    ]
+}
