@@ -16,7 +16,7 @@
     "start:docker": "ng serve --host 0.0.0.0 --port 4200 --configuration=container",
     "start:docker:poll": "npm run start:docker -- --poll 1000",
     "test": "ng test",
-    "test:ci": "ng test --single-run",
+    "test:ci": "ng test --watch=false",
     "test:coverage": "rimraf coverage && npm run test -- -cc"
   },
   "private": true,
