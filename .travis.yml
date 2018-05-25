@@ -18,6 +18,7 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 before_script:
+- npm install npm@latest -g
 - npm install -g @angular/cli
 - npm install
 - npm run build:prod
